@@ -98,6 +98,9 @@ def make_outreach(lead):
     return f"Hi {first_name} — I'm a local {services_str.lower()} specialist in your neighborhood. I noticed your property at {address_short} might benefit from some exterior TLC this spring. Would you be interested in a free estimate? No pressure at all. - Jason, Squeegex"
 
 
+@app.get("/api/run")
+async def run_engine_get():
+    return await run_engine()
 app.api_route("/api/engine/run", methods=["GET", "POST"])
 async def run_engine():
     try:
